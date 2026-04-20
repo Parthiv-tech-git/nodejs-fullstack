@@ -7,10 +7,13 @@ const ad =()=>{
 
   fetch('http://localhost:3000/additems',{
     method:'POST',
-    headers:{'content-Type':'appliction/json'},
+    headers:{'content-Type':'application/json'},
     body: JSON.stringify({count})
   })
     console.log(count)
+    if(Response.ok){
+      alert('data enter successfully')
+    }
 }
 
 
