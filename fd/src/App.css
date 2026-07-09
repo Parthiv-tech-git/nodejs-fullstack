@@ -1,0 +1,32 @@
+.bo{
+    background-color: rgb(248, 247, 247);
+    width: 100vw;
+    height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0%;
+
+
+
+}#mainn{
+   width: 40%;
+   height: 40%;
+
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    background-color: #fcfbfb;
+    
+ font-size: 16px;
+    border-radius: 5px;
+ 
+
+}#mainn input, button{
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 5px;
+    
+}

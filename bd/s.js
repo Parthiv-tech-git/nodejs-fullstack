@@ -12,7 +12,7 @@ g.use(e.json())
 const mysql = my.createConnection({
     host:'localhost',
     user:'root',
-    password:'@sys004',
+    password:'Parthiv56',
     database:"parthi"
 }
 )
@@ -22,7 +22,7 @@ mysql.connect(()=>{
 })
 g.post('/additems',(req,rep)=>{
     console.log(req.body)
-    const sql = "INSERT INTO daft (da) VALUES (?)";
+    const sql = "INSERT INTO itemm (da)VALUES (?)";
     const values = [req.body.count];
 
     mysql.query(sql, values, (err, result) => {
@@ -35,8 +35,31 @@ g.post('/additems',(req,rep)=>{
         
     });
  // mysql.query(` insert into daft(da) value(${req.body.count})`);
-  console.log('the succesfully complete')
+
+
+
+
+  
 })
+
+    g.get('/additems',(req,res )=>{
+        const se ="select * from itemm";
+        mysql.query(se,(err,resul)=>{
+             if (err) {
+            console.error("Query Error:", err);
+            return rep.status(500).send("Database Error");
+        }
+    res.send(resul);
+
+        })
+    })
+
+
+
+
+
+
+
 g.listen(3000, ()=>{console.log('succefulff com');
-    console.log("this i sijsvnlkjk;lfdsskvl;")
+    
 })

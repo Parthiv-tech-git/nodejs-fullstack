@@ -1,0 +1,10 @@
+1 creste the js file any name of file 
+2 npm init
+3 npm install the nodemon  express cors mysql2
+  cors is use json form 
+  exress for sever 
+    create the object then use 
+
+mysql2 used to connect mysql 
+use function createconection 
+retrun type .connrct () 
