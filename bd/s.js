@@ -13,7 +13,7 @@ const mysql = my.createConnection({
     host:'localhost',
     user:'root',
     password:'Parthiv56',
-    database:"parthi"
+    database:"authenti"
 }
 )
 mysql.connect(()=>{
@@ -22,7 +22,7 @@ mysql.connect(()=>{
 })
 g.post('/additems',(req,rep)=>{
     console.log(req.body)
-    const sql = "INSERT INTO itemm (da)VALUES (?)";
+    const sql = "INSERT INTO itemm (itemss)VALUES (?)";
     const values = [req.body.count];
 
     mysql.query(sql, values, (err, result) => {
@@ -50,7 +50,7 @@ g.post('/additems',(req,rep)=>{
             return rep.status(500).send("Database Error");
         }
     res.send(resul);
-
+      console.log(resul)
         })
     })
 
