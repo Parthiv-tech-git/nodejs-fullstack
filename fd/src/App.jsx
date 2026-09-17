@@ -1,9 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState('')
   const [count1, setCount1] = useState([])
+
+
+useEffect( ()=>{
+  let z=  async()=>{
+let dat= await fetch('http://localhost:3000/additems')
+let b= await dat.json();
+let c= Object.entries(b)
+ console.log(c)
+ setCount1(c)}
+ z();
+},[count1])
+
+
+
+
+
+
 const ad =()=>{
   if(count.length===0){
     alert("please enter your task to add")
@@ -19,6 +36,13 @@ else{
     setCount('')
 }
 }
+
+// const dlt =  ()=>{
+//  fetch('http://localhost:3000/additems',{
+//   method:'DELETE'
+//  })
+
+// }
  
 
 const shouu = async()=>{
@@ -45,6 +69,7 @@ let c= Object.entries(b)
         <div className="btnc">
           <button onClick={ad}>add</button>
           <button onClick={shouu}>show all</button>
+          <button  id='del' > delet all </button>
         </div>
         <div className="dat">
   {count1.map((x) => (

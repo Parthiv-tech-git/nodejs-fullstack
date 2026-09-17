@@ -22,7 +22,7 @@ mysql.connect(()=>{
 })
 g.post('/additems',(req,rep)=>{
     console.log(req.body)
-    const sql = "INSERT INTO itemm (itemss)VALUES (?)";
+    const sql = "INSERT INTO itemm (itemss) VALUES (?);"
     const values = [req.body.count];
 
     mysql.query(sql, values, (err, result) => {
@@ -41,6 +41,17 @@ g.post('/additems',(req,rep)=>{
 
   
 })
+
+  g.delete('/additems',(req,res)=>{
+const del ='TRUNCATE TABLE itemm ';
+mysql.query(del,(err,re)=>{
+    res.send(re);
+    console.log("the data is deleted")
+})
+
+
+
+  })
 
     g.get('/additems',(req,res )=>{
         const se ="select * from itemm";
